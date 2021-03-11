@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-app.use("/v1/transactions", transactions);
+app.use("/transactions", transactions);
 app.listen(port, async function bootApp() {
   console.log(
     `Server started on port: ${port} and in ${NODE_ENV} mode`.yellow.bold,
