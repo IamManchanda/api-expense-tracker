@@ -45,7 +45,6 @@
     "**/.fusebox/": true,
     "**/.dynamodb/": true,
     "**/.tern-port": true,
-    "**/deploy.sh": false,
-    "**/.resources": false
+    "**/deploy.sh": false
   }
 }
