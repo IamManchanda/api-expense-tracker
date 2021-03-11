@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nodemon ./src/index.js",
-    "start": "node ./src/index.js"
+    "start": "node ./src/index.js",
+    "deploy": "sh ./deploy.sh"
   },
   "dependencies": {
     "colors": "^1.4.0",

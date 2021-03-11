@@ -32,7 +32,8 @@
     "**/.node_repl_history": true,
     "**/*.tgz": true,
     "**/.yarn-integrity": true,
-    "**/.env": true,
+    "**/.env": false,
+    "**/.env.production": false,
     "**/.env.test": true,
     "**/.cache": true,
     "**/.next": true,
@@ -43,6 +44,7 @@
     "**/.serverless/": true,
     "**/.fusebox/": true,
     "**/.dynamodb/": true,
-    "**/.tern-port": true
+    "**/.tern-port": true,
+    "**/deploy.sh": false,
   }
 }
