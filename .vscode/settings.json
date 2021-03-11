@@ -46,5 +46,6 @@
     "**/.dynamodb/": true,
     "**/.tern-port": true,
     "**/deploy.sh": false,
+    "**/.resources": false
   }
 }
