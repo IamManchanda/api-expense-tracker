@@ -1,5 +1,5 @@
 const express = require("express");
-// const morgan = require("morgan");
+const morgan = require("morgan");
 
 const transactions = require("./routes/transactions");
 const connectDB = require("./connect-db");
@@ -12,6 +12,12 @@ connectDB();
 const app = express();
 const { NODE_ENV, PORT } = process.env || 5000;
 const port = Number(PORT);
+
+app.use(express.json());
+
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 
 app.use("/v1/transactions", transactions);
 app.listen(port, async function bootApp() {
