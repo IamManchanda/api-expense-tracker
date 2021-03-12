@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
 
 const transactions = require("./routes/transactions");
 const connectDB = require("./connect-db");
@@ -10,10 +11,17 @@ require("colors");
 connectDB();
 
 const app = express();
-const { NODE_ENV, PORT } = process.env || 5000;
+const { PORT, NODE_ENV, CORS_ORIGIN } = process.env || 5000;
 const port = Number(PORT);
 
 app.use(express.json());
+
+app.use(
+  cors({
+    origin: CORS_ORIGIN,
+    optionsSuccessStatus: 200,
+  }),
+);
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
