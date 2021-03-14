@@ -18,7 +18,8 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: CORS_ORIGIN,
+    origin:
+      NODE_ENV === "production" ? new RegExp(CORS_ORIGIN, "i") : CORS_ORIGIN,
     optionsSuccessStatus: 200,
   }),
 );
